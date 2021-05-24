@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  height: 8rem;
+  background-color: #691c76;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-family: 'Krona One', sans-serif;
+  color: white;
+  font-size: 2.5rem;
+  margin-left: 3rem;
+}
+
+.navbar .right {
+  display: flex;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.navbar .right span {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar .middle {
+  position: relative;
+}
+
+.navbar .middle input {
+  padding-left: 1rem;
+  height: 3rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+  outline: none;
+  width: 300px;
+}
+
+.navbar .middle .search {
+  position: absolute;
+  width: 300px;
+  min-height: 100px;
+  background-color: #f5f5f5;
+}
+
+.navbar .middle .search-res {
+  padding: 1rem;
+  border-bottom: 1px solid grey;
+  text-transform: capitalize;
+}
+
+.signup-main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.signup-main .signup-left {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.623)), url(./Assets/back.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  font-size: 6rem;
+  letter-spacing: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.signup-main .signup-left span {
+  font-family: 'Krona One', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signup-main .signup-right {
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.signup-main .signup-right form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+}
+
+.signup-main .signup-right form .form-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.signup-main .signup-right form .form-item label {
+  margin-bottom: 1rem;
+}
+
+.signup-main .signup-right form .form-item input {
+  border: 1px solid grey;
+  height: 3.5rem;
+  padding-left: 1.5rem;
+}
+
+.signup-main .signup-right form center {
+  margin-top: 2rem;
+}
+
+.signup-main .signup-right form input[type=submit] {
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  background-color: #691c76;
+  transition: all 0.3s linear;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.signup-main .signup-right form input[type=submit]:hover {
+  background-color: #8e269f;
+}
+
+.activate-btn {
+  cursor: pointer;
+  background-color: #691c76;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  color: #f5f5f5;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: calc(100vh - 80px);
+}
+
+.main .left {
+  background-color: #f5f5f5;
+}
+
+.main .right {
+  background-color: white;
+}
+
+.main .right-head {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  background-color: #a799b7;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: white;
+  font-size: 2rem;
+}
+
+.main .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .left ul li {
+  list-style-type: none;
+  font-size: 2rem;
+  margin-top: 4rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.main .left ul li:hover {
+  color: #691c76;
+}
+
+.card-cont {
+  display: flex;
+  padding: 2.5rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card-cont .card {
+  display: grid;
+  width: 300px;
+  grid-template-columns: 10% 60% 30%;
+  border: 2px solid grey;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  margin-bottom: 2rem;
+}
+
+.card-cont .card p {
+  margin: 0;
+}
+
+.card-cont .card .mes {
+  color: #1091db;
+  border: 2px solid #1091db;
+  padding: 0.5rem;
+  border-radius: 15px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.card-cont .card .name {
+  font-weight: bold;
+}
+
+.card-cont .card .exp {
+  font-size: 1.3rem;
+  color: grey;
+  text-transform: capitalize;
+}
+
+.card-cont .card .rating {
+  color: #d6c209;
+}
+/*# sourceMappingURL=App.css.map */

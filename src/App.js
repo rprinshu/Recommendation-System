@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import "./App.css";
+import Signup from "./Components/Auth/Signup";
+import Signin from "./Components/Auth/Signin";
+import Home from './Components/Home'
+import {Switch,Route} from 'react-router-dom';
+import Nav from "./Components/Navigation/Nav"
+import Activate from "./Components/Auth/Activate"
+
+import PrivateRoute from './Routes/PrivateRoute'
 
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Switch>
+    <PrivateRoute exact path="/" component={Home}/>
+    <Route exact path ="/signup" component={Signup}/>
+    <Route exact path ="/signin" component={Signin}/>
+    <Route exact path ="/auth/activate/:token" component={Activate}/>
+    </Switch>
     </div>
+   
   );
 }
 
